@@ -3,7 +3,7 @@ requirejs.config({
   "paths" : {
     "app" : "../../js/app",
     "jquery": "jquery.min",
-    "bootstrap" : "../css/bootstrap.min",
+    "bootstrap" : "bootstrap.min",
     "jasmine" : "jasmine-core/jasmine",
     "jasmine-html" : "jasmine-core/jasmine-html",
     "jasmine-boot" : "jasmine-core/boot"
@@ -14,7 +14,8 @@ requirejs.config({
     },
     "jasmine-boot" : {
       "deps" : ["jasmine", "jasmine-html"]
-    }
+    },
+    "bootstrap" :["jquery"]
   } 
 });
 
