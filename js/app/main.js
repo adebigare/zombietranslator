@@ -11,20 +11,29 @@ require(['jquery', 'bootstrap'], function ($) {
     });
 
     function zombify(){
-      
-      var evalKeypress = $('#english').keyup(function(){
+    
         var value = $(this).val();
         var zombie = $("#zombie");
         var pattern = new RegExp(/r\b/g);
+        var newVal = value.replace(pattern, "rh");
         var result = pattern.test(value);
-        if (result == true) {
-          value.replace(pattern, "rh");
-//          $('#zombie').val($('#english').val();
-        } else {
-          $('#zombie').val($('#english').val());
+        switch(value) {
+          case pattern:
+            var newVal = value.replace(pattern, "rh");
+            zombie.val(newVal);
+            break;
+          default:
+            $('#zombie').val($('#english').val());
+            break;
         }
+        // if (result == true) {
+        //  zombie.val(newVal);
+        // } 
+        // else {
+        //   $('#zombie').val($('#english').val());
+        // }
         
-      });
+      
 
 
 

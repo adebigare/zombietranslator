@@ -19,11 +19,11 @@ requirejs.config({
   } 
 });
 
-require(['jasmine-boot'], function () {
-  require(['my-library.specs'], function(){
-    //trigger Jasmine
-    window.onload();
-  })
-});
+// require(['jasmine-boot'], function () {
+//   require(['my-library.specs'], function(){
+//     //trigger Jasmine
+//     window.onload();
+//   })
+// });
 
 requirejs(['app/main']);
