@@ -11,6 +11,24 @@ require(['jquery', 'bootstrap'], function ($) {
     });
 
     function zombify(){
+      
+      var evalKeypress = $('#english').keyup(function(){
+        var value = $(this).val();
+        var zombie = $("#zombie");
+        var pattern = new RegExp(/r\b/g);
+        var result = pattern.test(value);
+        if (result == true) {
+          value.replace(pattern, "rh");
+//          $('#zombie').val($('#english').val();
+        } else {
+          $('#zombie').val($('#english').val());
+        }
+        
+      });
+
+
+
+      
       // 1. lower-case "r" at the end of words replaced with "rh".
       // 2. an "a" or "A" by itself will be replaced with "hra".
       // 3. the starts of sentences are capitalised (the "start of a sentence" is any occurrence of
@@ -20,7 +38,8 @@ require(['jquery', 'bootstrap'], function ($) {
       // 6. "o" or "O" is replaced by "rrrRr"
       // 7. "u" or "U" is replaced by "rrrrRr"
       // 8. "r" or "R' is replaced by "RR"
-      $('#zombie').val($('#english').val());
+      
+      
     }
 
     function unzombify(){
