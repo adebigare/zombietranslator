@@ -1,11 +1,11 @@
-require(['jquery',"ZombieLang"], function($,convertToZombie) {
+require(['jquery',"ZombieLang"], function($,ZombieLang) {
 
   function zombify() {
 
       var inputValue = $(this).val();
       var zombie = $("#zombie");
 
-      var output = convertToZombie(inputValue);
+      var output = ZombieLang.convert(inputValue);
       zombie.val(output);
 
       // var pattern = new RegExp(/r\b/g);

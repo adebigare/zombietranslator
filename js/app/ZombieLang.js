@@ -1,8 +1,9 @@
 define([], function() {
-	var convertToZombie = function(inputValue) {
+	var ZombieLang = {};
+	ZombieLang.convert = function(inputValue) {
 		return inputValue;
 	}
-	return convertToZombie;
+	return ZombieLang;
 // 	var ZombieLang = function(englishVal) {
 // 		this.englishVal = englishVal;
 // 		this.zombify = zombify; 
