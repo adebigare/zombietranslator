@@ -1,0 +1,3 @@
+define(['ZombieLang'], function(ZombieLang) {
+
+});

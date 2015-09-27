@@ -1,29 +1,16 @@
 requirejs.config({
-  "baseUrl" : "js/vendors",
+  "baseUrl" : "js/app",
   "paths" : {
-    "app" : "../../js/app",
-    "jquery": "jquery.min",
-    "bootstrap" : "bootstrap.min",
-    "jasmine" : "jasmine-core/jasmine",
-    "jasmine-html" : "jasmine-core/jasmine-html",
-    "jasmine-boot" : "jasmine-core/boot"
+    "jquery": "../vendors/jquery.min",
+    "bootstrap": "../vendors/bootstrap.min",
   },
   "shim": {
-    "jasmine-html" : {
-      "deps" : ["jasmine"]
-    },
-    "jasmine-boot" : {
-      "deps" : ["jasmine", "jasmine-html"]
-    },
     "bootstrap" :["jquery"]
   } 
 });
 
-// require(['jasmine-boot'], function () {
-//   require(['my-library.specs'], function(){
-//     //trigger Jasmine
-//     window.onload();
-//   })
-// });
+require(['main']);
 
-requirejs(['app/main']);
+ requirejs(["jquery"], function() {
+   console.log('Everything is set up.');
+});
