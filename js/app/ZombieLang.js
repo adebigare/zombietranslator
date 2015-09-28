@@ -1,21 +1,22 @@
 define([], function() {
 	var ZombieLang = {};
+	
 	ZombieLang.convert = function(inputValue) {
+
+		var patterns = [
+			{
+				match : /r\b/g,
+				replace : 'rh'
+			}
+		];
+
+		for (var x = 0; x < patterns.length; x++) {
+			var pattern = patterns[x];	
+			inputValue = inputValue.replace(pattern.match, pattern.replace);
+
+		}
+
 		return inputValue;
-	}
+	};
 	return ZombieLang;
-// 	var ZombieLang = function(englishVal) {
-// 		this.englishVal = englishVal;
-// 		this.zombify = zombify; 
-// 	}
-
-// 	ZombieLang.prototype.zombify = function() {
-// 		this.pattern = new RegExp(/r\b/g);
-// 	}
-
-// 	return ZombieLang;
 });
-
-//  var pattern = new RegExp(/r\b/g);
-//         var newVal = inputValue.replace(pattern, "rh");
-//         var result = pattern.test(inputValue);

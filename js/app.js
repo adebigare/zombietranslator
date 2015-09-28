@@ -3,6 +3,7 @@ requirejs.config({
   "paths" : {
     "jquery": "../vendors/jquery.min",
     "bootstrap": "../vendors/bootstrap.min",
+    "ZombieLang" : "ZombieLang"
   },
   "shim": {
     "bootstrap" :["jquery"]
@@ -11,6 +12,6 @@ requirejs.config({
 
 require(['main']);
 
- requirejs(["jquery"], function() {
+ requirejs(["jquery","ZombieLang"], function() {
    console.log('Everything is set up.');
 });
